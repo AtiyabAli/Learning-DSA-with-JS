@@ -100,4 +100,113 @@
 
 //Search Algorithm
 
+//Linear Search
 
+//Binary Search
+
+//Linear search pseudocode
+
+// function linearSearch(arr, target){
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i]===target){
+//             return i;
+//         }
+//     }
+//     return -1
+// }
+// console.log(linearSearch([-5, 2, 10, 4, 6], 10));
+// console.log(linearSearch([-5, 2, 10, 4, 6], 4));
+// console.log(linearSearch([-5, 2, 10, 4, 6], 1));
+
+// function sortedarrIndex(arr, target){
+//     arr.sort((a, b)=>{
+//         return a - b
+//     })
+// }
+// console.log(sortedarrIndex([-5, 2, 10, 4, 6]));
+
+// let arr = [-5, 2, 10, 4, 6];
+
+// arr.sort((a, b)=>{
+//     return a - b
+// })
+// console.log(arr);
+
+// function fIndex(arr, target){
+//     arr.sort((a, b)=>{
+//         return a - b
+//     })
+//     for(let i=0; i<arr.length; i++){
+//         if(arr[i] === target){
+//             return i;
+//         }
+//     }
+//     return -1
+// }
+// console.log(fIndex([-5, 2, 10, 4, 6], 10));
+
+// function binarySearch(arr, target){
+//     let leftIndex = 0;
+//     let rightIndex = arr.length - 1
+//     while (leftIndex<=rightIndex) {
+//         let middleIndex = Math.floor((leftIndex+rightIndex)/2)
+//         if(target === arr[middleIndex]){
+//             return middleIndex
+//         }
+//         if(target < arr[middleIndex]){
+//             rightIndex = middleIndex - 1
+//         } else {
+//             leftIndex = middleIndex + 1
+//         }
+//     }
+// }
+// console.log(binarySearch([-5, 2, 4, 6, 10], 10));
+// console.log(binarySearch([-5, 2, 4, 6, 10], 4));
+// console.log(binarySearch([-5, 8, 4, 6, 10], 6));
+
+//Time complexity is O(logn)
+//As input search is reduced by half on each iteration
+
+// function recursiveBinaryDearch(arr, target) {
+//   return search(arr, target, 0, arr.length - 1);
+// }
+// function search(arr, target, leftIndex, rightIndex) {
+//   if (leftIndex > rightIndex) {
+//     return -1;
+//   }
+//   let middleIndex = (leftIndex + rightIndex) / 2;
+
+//   if (target === arr[middleIndex]) {
+//     return middleIndex;
+//   }
+//   if (target < middleIndex) {
+//     return search(arr, target, leftIndex, middleIndex - 1);
+//   } else {
+//     return search(arr, target, middleIndex + 1, rightIndex);
+//   }
+// }
+// console.log(recursiveBinaryDearch([-5, 2, 4, 6, 10], 2));
+
+//Sort Algorithm
+
+//Bubble sort
+
+//compare the Json element in the array
+
+function sortArr(arr){
+  let swapped
+  do{
+    swapped = false
+    for(let i=0; i<arr.length-1; i++){
+      if(arr[i] > arr[i+1]){
+        let temp = arr[i]
+        arr[i] = arr[i+1]
+        arr[i+1] = temp
+        swapped = true
+      }
+    }
+  }
+  while(swapped)
+  return arr
+}
+console.log(sortArr([-5, 2, 1, 6, 10]));
